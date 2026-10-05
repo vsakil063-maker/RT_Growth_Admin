@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cyber_bg_dark">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- হেডার বার -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_cyber_glass"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RT GROWTH COCKPIT"
+                        android:textColor="@color/cyber_neon"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="● Master Command Hub (LIVE)"
+                        android:textColor="@color/cyber_emerald"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#1A00FFCC"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:text="CONNECTED"
+                    android:textColor="@color/cyber_neon"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- লাইভ স্ট্যাটিস্টিক্স গ্রিড (৬টি কার্ড) -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:alignmentMode="alignMargins"
+                android:layout_marginBottom="16dp">
+
+                <!-- ১. Total Users -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_cyber_glass"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TOTAL USERS" android:textColor="@color/text_muted" android:textSize="10sp" android:textStyle="bold"/>
+                    <TextView android:id="@+id/tvTotalUsers" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="@color/text_white" android:textSize="18sp" android:textStyle="bold" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <!-- ২. Asset Volume -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_cyber_glass"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ASSET VOLUME" android:textColor="@color/cyber_emerald" android:textSize="10sp" android:textStyle="bold"/>
+                    <TextView android:id="@+id/tvAssetVolume" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="৳0.00" android:textColor="@color/cyber_emerald" android:textSize="18sp" android:textStyle="bold" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <!-- ৩. Total Deposit -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_cyber_glass"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TOTAL DEPOSIT" android:textColor="@color/cyber_cyan" android:textSize="10sp" android:textStyle="bold"/>
+                    <TextView android:id="@+id/tvTotalDeposits" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="৳0.00" android:textColor="@color/cyber_cyan" android:textSize="16sp" android:textStyle="bold" android:layout_marginTop="4dp"/>
+                    <TextView android:id="@+id/tvTodayDeposits" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Today: ৳0.00" android:textColor="@color/cyber_emerald" android:textSize="9sp" android:layout_marginTop="2dp"/>
+                </LinearLayout>
+
+                <!-- ৪. Total Withdraw -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_co
