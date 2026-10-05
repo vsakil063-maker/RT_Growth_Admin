@@ -1,116 +1,370 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout 
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cyber_bg_dark">
+    android:background="@color/cyber_bg_dark"
+    android:fillViewport="true">
 
-    <androidx.core.widget.NestedScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
+        <!-- হেডার এরিয়া -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/bg_cyber_glass"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
 
-            <!-- হেডার বার -->
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="RT GROWTH COCKPIT"
+                android:textColor="@color/cyber_neon"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="● MASTER COMMAND HUB (CONNECTED)"
+                android:textColor="@color/cyber_emerald"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- লাইভ স্ট্যাটিস্টিক্স গ্রিড -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="3"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:layout_marginBottom="16dp">
+
+            <!-- ১. Total Users -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
                 android:background="@drawable/bg_cyber_glass"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="16dp"
-                android:layout_marginBottom="16dp">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="RT GROWTH COCKPIT"
-                        android:textColor="@color/cyber_neon"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="● Master Command Hub (LIVE)"
-                        android:textColor="@color/cyber_emerald"
-                        android:textSize="11sp" />
-                </LinearLayout>
-
+                android:orientation="vertical"
+                android:padding="12dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#1A00FFCC"
-                    android:paddingHorizontal="10dp"
-                    android:paddingVertical="4dp"
-                    android:text="CONNECTED"
-                    android:textColor="@color/cyber_neon"
+                    android:text="TOTAL USERS"
+                    android:textColor="@color/text_muted"
                     android:textSize="10sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvTotalUsers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/text_white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <!-- ২. Total Deposit -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_cyber_glass"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TOTAL DEPOSIT"
+                    android:textColor="@color/cyber_cyan"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvTotalDeposits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="৳0.00"
+                    android:textColor="@color/cyber_cyan"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvTodayDeposits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Today: ৳0.00"
+                    android:textColor="@color/cyber_emerald"
+                    android:textSize="9sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <!-- লাইভ স্ট্যাটিস্টিক্স গ্রিড (৬টি কার্ড) -->
-            <GridLayout
-                android:layout_width="match_parent"
+            <!-- ৩. Total Withdraw -->
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:columnCount="2"
-                android:alignmentMode="alignMargins"
-                android:layout_marginBottom="16dp">
-
-                <!-- ১. Total Users -->
-                <LinearLayout
-                    android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_cyber_glass"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/bg_cyber_glass"
-                    android:orientation="vertical"
-                    android:padding="12dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TOTAL USERS" android:textColor="@color/text_muted" android:textSize="10sp" android:textStyle="bold"/>
-                    <TextView android:id="@+id/tvTotalUsers" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="@color/text_white" android:textSize="18sp" android:textStyle="bold" android:layout_marginTop="4dp"/>
-                </LinearLayout>
-
-                <!-- ২. Asset Volume -->
-                <LinearLayout
-                    android:layout_width="0dp"
+                    android:text="TOTAL WITHDRAW"
+                    android:textColor="@color/cyber_rose"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvTotalWithdrawals"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/bg_cyber_glass"
-                    android:orientation="vertical"
-                    android:padding="12dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ASSET VOLUME" android:textColor="@color/cyber_emerald" android:textSize="10sp" android:textStyle="bold"/>
-                    <TextView android:id="@+id/tvAssetVolume" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="৳0.00" android:textColor="@color/cyber_emerald" android:textSize="18sp" android:textStyle="bold" android:layout_marginTop="4dp"/>
-                </LinearLayout>
-
-                <!-- ৩. Total Deposit -->
-                <LinearLayout
-                    android:layout_width="0dp"
+                    android:text="৳0.00"
+                    android:textColor="@color/cyber_rose"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvTodayWithdrawals"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/bg_cyber_glass"
-                    android:orientation="vertical"
-                    android:padding="12dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TOTAL DEPOSIT" android:textColor="@color/cyber_cyan" android:textSize="10sp" android:textStyle="bold"/>
-                    <TextView android:id="@+id/tvTotalDeposits" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="৳0.00" android:textColor="@color/cyber_cyan" android:textSize="16sp" android:textStyle="bold" android:layout_marginTop="4dp"/>
-                    <TextView android:id="@+id/tvTodayDeposits" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Today: ৳0.00" android:textColor="@color/cyber_emerald" android:textSize="9sp" android:layout_marginTop="2dp"/>
-                </LinearLayout>
+                    android:text="Today: ৳0.00"
+                    android:textColor="@color/cyber_rose"
+                    android:textSize="9sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-                <!-- ৪. Total Withdraw -->
-                <LinearLayout
-                    android:layout_width="0dp"
+            <!-- ৪. Work Value Done -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_cyber_glass"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_co
+                    android:text="WORK VALUE DONE"
+                    android:textColor="@color/cyber_amber"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvTotalWorkDone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="৳0.00"
+                    android:textColor="@color/cyber_amber"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- ৫. User Profits -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_cyber_glass"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="USER PROFITS"
+                    android:textColor="@color/cyber_purple"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvUserProfits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="৳0.00"
+                    android:textColor="@color/cyber_purple"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- ৬. Asset Volume -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_cyber_glass"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ASSET VOLUME"
+                    android:textColor="@color/cyber_emerald"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvTotalVolume"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="৳0.00"
+                    android:textColor="@color/cyber_emerald"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </GridLayout>
+
+        <!-- কমান্ড ডেক হেডিং -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="COMMAND WORKSPACE DECK"
+            android:textColor="@color/text_muted"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="12dp" />
+
+        <!-- ১০টি কমান্ড বাটন গ্রিড -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false">
+
+            <!-- ১. ইউজার ডিরেক্টরি -->
+            <Button
+                android:id="@+id/btnDirectory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:backgroundTint="@color/cyber_card_bg"
+                android:text="👥 User Directory"
+                android:textColor="@color/text_white"
+                android:textSize="12sp" />
+
+            <!-- ২. ডিপোজিট রিকোয়েস্ট -->
+            <Button
+                android:id="@+id/btnDeposits"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:backgroundTint="@color/cyber_card_bg"
+                android:text="💰 Deposits (0)"
+                android:textColor="@color/cyber_amber"
+                android:textSize="12sp" />
+
+            <!-- ৩. উইথড্রয়াল রিকোয়েস্ট -->
+            <Button
+                android:id="@+id/btnWithdrawals"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:backgroundTint="@color/cyber_card_bg"
+                android:text="💸 Withdrawals (0)"
+                android:textColor="@color/cyber_emerald"
+                android:textSize="12sp" />
+
+            <!-- ৪. সেন্ডমানি রিকোয়েস্ট -->
+            <Button
+                android:id="@+id/btnSendMoney"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:backgroundTint="@color/cyber_card_bg"
+                android:text="🔄 Send Money Req"
+                android:textColor="@color/cyber_indigo"
+                android:textSize="12sp" />
+
+            <!-- ৫. রিচার্জ রিকোয়েস্ট -->
+            <Button
+                android:id="@+id/btnRecharges"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:backgroundTint="@color/cyber_card_bg"
+                android:text="📱 Recharges (0)"
+                android:textColor="@color/cyber_cyan"
+                android:textSize="12sp" />
+
+            <!-- ৬. গিফট ভাউচার ম্যানেজার -->
+            <Button
+                android:id="@+id/btnGiftVouchers"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:backgroundTint="@color/cyber_card_bg"
+                android:text="🎁 Gift Vouchers"
+                android:textColor="@color/cyber_amber"
+                android:textSize="12sp" />
+
+            <!-- ৭. টাইপিং টাস্ক চেকার -->
+            <Button
+                android:id="@+id/btnTypingTasks"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:backgroundTint="@color/cyber_card_bg"
+                android:text="📝 Typing Tasks (0)"
+                android:textColor="@color/cyber_purple"
+                android:textSize="12sp" />
+
+            <!-- ৮. লাইভ সাপোর্ট চ্যাট -->
+            <Button
+                android:id="@+id/btnSupportChat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:backgroundTint="@color/cyber_card_bg"
+                android:text="💬 Support Chat"
+                android:textColor="@color/cyber_neon"
+                android:textSize="12sp" />
+
+            <!-- ৯. ব্যালেন্স রিসেট ম্যানেজার -->
+            <Button
+                android:id="@+id/btnBalanceReset"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:backgroundTint="@color/cyber_card_bg"
+                android:text="⚠️ Balance Reset"
+                android:textColor="@color/cyber_rose"
+                android:textSize="12sp" />
+
+            <!-- ১০. সিস্টেম সেটিংস ও গেটওয়ে -->
+            <Button
+                android:id="@+id/btnSettings"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:backgroundTint="@color/cyber_card_bg"
+                android:text="⚙️ System Settings"
+                android:textColor="@color/text_white"
+                android:textSize="12sp" />
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
