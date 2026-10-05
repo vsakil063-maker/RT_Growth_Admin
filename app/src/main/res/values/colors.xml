@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cyber_bg_dark">#00100D</color>
+    <color name="cyber_bg_radial">#012B25</color>
+    <color name="cyber_neon">#00FFCC</color>
+    <color name="cyber_emerald">#10B981</color>
+    <color name="cyber_cyan">#06B6D4</color>
+    <color name="cyber_amber">#F59E0B</color>
+    <color name="cyber_rose">#F43F5E</color>
+    <color name="cyber_purple">#A855F7</color>
+    <color name="cyber_indigo">#6366F1</color>
+    <color name="cyber_card_bg">#99002820</color>
+    <color name="cyber_card_border">#3300FFCC</color>
+    <color name="cyber_input_bg">#B300120E</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_muted">#94A3B8</color>
+</resources>
