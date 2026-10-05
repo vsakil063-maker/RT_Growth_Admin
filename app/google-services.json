@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "334771083987",
+    "firebase_url": "https://typing-5c3e4-default-rtdb.firebaseio.com",
+    "project_id": "typing-5c3e4",
+    "storage_bucket": "typing-5c3e4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:334771083987:android:6bba8c6183f9e329d39226",
+        "android_client_info": {
+          "package_name": "com.rtgrowth.admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgn1GgF4sYq65N4yVxvwxfeU-_WP8lmNs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
